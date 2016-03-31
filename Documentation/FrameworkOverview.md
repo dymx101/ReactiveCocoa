@@ -18,29 +18,17 @@ Stream是细胞单元([monads][])，这就允许复杂的操作基于一些基�
 
 ## Signals
 
-A **signal**, represented by the [RACSignal][] class, is a _push-driven_
-[stream](#streams).
+**Signal**，由[RACSignal][]类来表示，是一个_push-driven_的[stream](#streams)。
 
-Signals generally represent data that will be delivered in the future. As work
-is performed or data is received, values are _sent_ on the signal, which pushes
-them out to any subscribers. Users must [subscribe](#subscription) to a signal
-in order to access its values.
+Signal一般来说代表会在将来发送的数据，如果工作完成或者得到了数据，这些值会在signal上面发送，从而将他们推到订阅者手里。为了访问singal的数据，用户必须订阅[subscribe](#subscription)signal。
 
-Signals send three different types of events to their subscribers:
+Signal发送三种类型的事件给订阅者：
 
- * The **next** event provides a new value from the stream. [RACStream][]
-   methods only operate on events of this type. Unlike Cocoa collections, it is
-   completely valid for a signal to include `nil`.
- * The **error** event indicates that an error occurred before the signal could
-   finish. The event may include an `NSError` object that indicates what went
-   wrong. Errors must be handled specially – they are not included in the
-   stream's values.
- * The **completed** event indicates that the signal finished successfully, and
-   that no more values will be added to the stream. Completion must be handled
-   specially – it is not included in the stream of values.
+  * **Next**事件从stream中提供一个新值。[RACStream][]方法只操作这类事件。和Cocoa的集合类型不同，一个signal包含`nil`值是完全合法的。
+  * **Error**事件表示在signal完成之前发生了错误。这个事件可能包含`NSError`对象表示是什么错误。Errors必须特殊的处理 - 他们不被包含在stream发送的值当中。
+  * **Completed**事件表示signal成功完成，不会再有值被添加到stream里面来。Complition必须特殊的处理 - 他不被包含在stream的值当中。
 
-The lifetime of a signal consists of any number of `next` events, followed by
-one `error` or `completed` event (but not both).
+signal的生命周期中，会包含任意数量的`next`事件，跟随一个`error`或者`completed`事件(二者之一)。
 
 ### Subscription
 
