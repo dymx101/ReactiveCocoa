@@ -66,19 +66,13 @@ Connection由[RACMulticastConnection][]类表示，是一个可以被任意数�
 
 ## Sequences
 
-A **sequence**, represented by the [RACSequence][] class, is a _pull-driven_
-[stream](#streams).
+**Sequence**由 RACSequence类代表，是一个 _pull-driven_的[stream](#streams)。
 
-Sequences are a kind of collection, similar in purpose to `NSArray`. Unlike
-an array, the values in a sequence are evaluated _lazily_ (i.e., only when they
-are needed) by default, potentially improving performance if only part of
-a sequence is used. Just like Cocoa collections, sequences cannot contain `nil`.
+Sequence是一种集合类型，同`NSArray`的目标相似。但是和数组不同的是，sequence中的值默认是lazily加载的(i.e. 仅当他们被需要时)，如果仅仅sequence的一部分被使用，就潜在的提升了性能。就像Cocoa的其他集合类型，sequences不可以是nil。
 
-Sequences are similar to [Clojure's sequences][seq] ([lazy-seq][] in particular), or
-the [List][] type in [Haskell][].
+Sequences类似于 闭包的序列 ([Clojure's sequences][seq]) (即[lazy-seq][])，或者是[Haskell][]中的[List][]。
 
-RAC adds a `-rac_sequence` method to most of Cocoa's collection classes,
-allowing them to be used as [RACSequences][RACSequence] instead.
+RAC 增加了一个 `-rac_sequence`方法到多数的Cocoa集合类型当中，允许他们被作为 [RACSequences][RACSequence] 使用。
 
 ## Disposables
 
