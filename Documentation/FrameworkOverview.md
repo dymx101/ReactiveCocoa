@@ -8,20 +8,13 @@
 
 ## Streams
 
-A **stream**, represented by the [RACStream][] abstract class, is any series of
-object values.
+一个**stream**, 由 [RACStream][] 抽象类表示，是任何对象值得一个序列。
 
-Values may be available immediately or in the future, but must be retrieved
-sequentially. There is no way to retrieve the second value of a stream without
-evaluating or waiting for the first value.
+这些值有可能立刻可用，也有可能将来可用，但是，必须以连续的(Sequantially)方式获取。不可以在第一个值未处理之前，获取第二个值。
 
-Streams are [monads][]. Among other things, this allows complex operations to be
-built on a few basic primitives (`-bind:` in particular). [RACStream][] also
-implements the equivalent of the [Monoid][] and [MonadZip][] typeclasses from
-[Haskell][].
+Stream好像单细胞([monads][])，这就允许复杂的操作基于一些基本的对象(比如 `-bind:`)。[RACStream][]也实现了类似[Haskell][]中的[Monoid][]和[MonadZip][]类型。
 
-[RACStream][] isn't terribly useful on its own. Most streams are treated as
-[signals](#signals) or [sequences](#sequences) instead.
+[RACStream][]本身并不是很有用。大多数streams被用作[signals](#signals)和[sequances](#sequences)。
 
 ## Signals
 
