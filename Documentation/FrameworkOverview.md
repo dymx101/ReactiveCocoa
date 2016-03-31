@@ -36,7 +36,7 @@ signal的生命周期中，会包含任意数量的`next`事件，跟随一个`e
 
 **Subscription** 是在任何对于 [-subscribeNext:error:completed:][RACSingal] 方法的调用，或者对某一个相应的方便方法 (convenience methods)的调用之时创建。技术上讲，大部分[RACStream][]和[RACSignal][RACSignal+Operations]也会创建subscription，但是这些过渡的subscription一般是实现细节。
 
-Subscriptions [保留他们的signals][Memory Management], 并在signals完成或出错时自动处理它们。Subscriptions也可以被[手动处理](#displosables)。
+Subscriptions [保留他们的signals][Memory Management], 并在signals完成或出错时自动处理它们。Subscriptions也可以被[手动处理](#disposables)。
 
 ### Subjects
 
