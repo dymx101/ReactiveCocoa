@@ -1,14 +1,10 @@
 # Framework Overview
 
-This document contains a high-level description of the different components
-within the ReactiveCocoa framework, and an attempt to explain how they work
-together and divide responsibilities. This is meant to be a starting point for
-learning about new modules and finding more specific documentation.
+此文档是对于在ReactiveCoca框架中的不同组件的高级描述，此文档同时也尝试解释他们(不同组件)之间如何协同工作以及各自的责任。
+此文档可以被当做学习新模块和发现更详细文档的开端。
 
-这份文档
+需要寻找例子 或者 RAC的用法，请参见 [README][] 或者 [Design Guidelines][]。
 
-For examples and help understanding how to use RAC, see the [README][] or
-the [Design Guidelines][].
 
 ## Streams
 
