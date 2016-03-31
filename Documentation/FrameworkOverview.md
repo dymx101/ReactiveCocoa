@@ -50,18 +50,11 @@ Subject可以被当做一个"可变"的signal, 就好像 `NSMutableArray` 对于
 
 ### Commands
 
-A **command**, represented by the [RACCommand][] class, creates and subscribes
-to a signal in response to some action. This makes it easy to perform
-side-effecting work as the user interacts with the app.
+**Command**由[RACCommand][]类表示，在某个action发生时触发，创建和订阅一个signal。这就让他很容易在用户和app交互时，执行side-effecting的工作。
 
-Usually the action triggering a command is UI-driven, like when a button is
-clicked. Commands can also be automatically disabled based on a signal, and this
-disabled state can be represented in a UI by disabling any controls associated
-with the command.
+通常由action触发command是UI驱动的，比如说点击了一个按钮。Commands也可以基于一个signal而被自动disable掉，而且这个disabled的状态可以由禁用同此command相关的任何控件来表现。
 
-On OS X, RAC adds a `rac_command` property to
-[NSButton][NSButton+RACCommandSupport] for setting up these behaviors
-automatically.
+在OS X上，RAC为[NSButton][NSButton+RACCommandSupport]增加了一个`rac_command`属性，该属性会自动设置好这些行为。
 
 ### Connections
 
