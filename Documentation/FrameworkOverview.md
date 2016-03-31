@@ -32,19 +32,11 @@ signal的生命周期中，会包含任意数量的`next`事件，跟随一个`e
 
 ### Subscription
 
-A **subscriber** is anything that is waiting or capable of waiting for events
-from a [signal](#signals). Within RAC, a subscriber is represented as any object
-that conforms to the [RACSubscriber][] protocol.
+**Subscriber** 是任何等待或者能够等待[signal](#signals)发出事件的对象。在RAC中，一个subscruber由任何遵守 [RACSubscriber][] 协议的对象表示。
 
-A **subscription** is created through any call to
-[-subscribeNext:error:completed:][RACSignal], or one of the corresponding
-convenience methods. Technically, most [RACStream][] and
-[RACSignal][RACSignal+Operations] operators create subscriptions as well, but
-these intermediate subscriptions are usually an implementation detail.
+**Subscription** 是在任何对于 [-subscribeNext:error:completed:][RACSingal] 方法的调用，或者对某一个相应的方便方法 (convenience methods)的调用之时创建。技术上讲，大部分[RACStream][]和[RACSignal][RACSignal+Operations]也会创建subscription，但是这些过渡的subscription一般是实现细节。
 
-Subscriptions [retain their signals][Memory Management], and are automatically
-disposed of when the signal completes or errors. Subscriptions can also be
-[disposed of manually](#disposables).
+Subscriptions [保留他们的signals][Memory Management], 并在signals完成或出错时自动处理它们。Subscriptions也可以被[手动处理](#displosables)。
 
 ### Subjects
 
