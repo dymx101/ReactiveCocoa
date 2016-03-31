@@ -5,6 +5,8 @@ within the ReactiveCocoa framework, and an attempt to explain how they work
 together and divide responsibilities. This is meant to be a starting point for
 learning about new modules and finding more specific documentation.
 
+这份文档
+
 For examples and help understanding how to use RAC, see the [README][] or
 the [Design Guidelines][].
 
