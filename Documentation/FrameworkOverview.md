@@ -42,7 +42,7 @@ Subscriptions [保留他们的signals][Memory Management], 并在signals完成�
 
 **Subject** 由[RACSubject][]类表示，是一个可以被手动控制的[signal](#signals)。
 
-Subject可以被当做一个"可变"的signal, 就好像 `NSMutableArray` 对于 `NSArray`一样。它们在联结非RAC代码到signal事件的过程中超级有用。
+Subject可以被当做一个"可变"的signal, 就好像 `NSMutableArray` 对于 `NSArray`一样。它们在将非RAC代码连接到signal世界的过程中超级有用。
 
 比如说，相比于在block回调中处理程序逻辑，block可以简单的向一个共享的subject发送事件。subject可以被当做一个[RACSignal][]返回， 从而隐藏了回调的实现细节。
 
