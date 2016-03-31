@@ -40,22 +40,13 @@ Subscriptions [保留他们的signals][Memory Management], 并在signals完成�
 
 ### Subjects
 
-A **subject**, represented by the [RACSubject][] class, is a [signal](#signals)
-that can be manually controlled.
+**Subject** 由[RACSubject][]类表示，是一个可以被手动控制的[signal](#signals)。
 
-Subjects can be thought of as the "mutable" variant of a signal, much like
-`NSMutableArray` is for `NSArray`. They are extremely useful for bridging
-non-RAC code into the world of signals.
+Subject可以被当做一个"可变"的signal, 就好像 `NSMutableArray` 对于 `NSArray`一样。它们在联结非RAC代码到signal事件的过程中超级有用。
 
-For example, instead of handling application logic in block callbacks, the
-blocks can simply send events to a shared subject instead. The subject can then
-be returned as a [RACSignal][], hiding the implementation detail of the
-callbacks.
+比如说，相比于在block回调中处理程序逻辑，block可以简单的向一个共享的subject发送事件。subject可以被当做一个[RACSignal][]返回， 从而隐藏了回调的实现细节。
 
-Some subjects offer additional behaviors as well. In particular,
-[RACReplaySubject][] can be used to buffer events for future
-[subscribers](#subscription), like when a network request finishes before
-anything is ready to handle the result.
+一些subjects也提供额外的行为。特别是， [RACReplaySubject][] 可以被用于缓冲未来[subscribers](#subscription)的事件，比如当一个网络请求在相应的处理准备好之前就完成的情况。
 
 ### Commands
 
