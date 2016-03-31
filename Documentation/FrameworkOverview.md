@@ -62,7 +62,7 @@ Connection由[RACMulticastConnection][]类表示，是一个可以被任意数�
 
 [Signals](#signals)默认的状态是_cold_，也就是他们每增加一个新的subscription的时候才开始工作。这种行为通常是我们所需要的，因为数据会为每个subscriber重新计算，但是这也可能带来问题，比如如果signal有side effects或者signal的工作很耗资源(例如发送网络请求)。
 
-一个connect是通过 [RACSignal][RACSignal+Operations]上的 `-publish` 或 `-multicast:` 方法创建，确保只有一个基础subscription被创建，不管connection被订阅多少次。一旦connected, connection的signal据说就变_hot_了，基础subscription将一直保持活动直到所有对connection的subscriptions都被处理掉[disposed](#disposables)为止。
+一个connect是通过 [RACSignal][RACSignal+Operations]上的 `-publish` 或 `-multicast:` 方法创建，确保只有一个基础subscription被创建，不管connection被订阅多少次。一旦connected, connection的signal据说就变_hot_了，基础subscription将一直保持活动直到所有对connection的subscriptions都被[处理掉(disposed)](#disposables)为止。
 
 ## Sequences
 
