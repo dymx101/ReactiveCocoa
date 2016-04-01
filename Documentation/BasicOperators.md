@@ -77,8 +77,7 @@ RACSignal *loggingSignal = [RACSignal createSignal:^ RACDisposable * (id<RACSubs
 
 ### Injecting effects
 
-The [-do…][RACSignal+Operations] methods add side effects to a signal without actually
-subscribing to it:
+[-do…][RACSignal+Operations] 方法为一个信号增加side effects，而不用真的订阅它：
 
 ```objc
 __block unsigned subscriptions = 0;
