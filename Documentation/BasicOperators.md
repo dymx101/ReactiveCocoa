@@ -190,14 +190,11 @@ RACSignal *flattened = [signalOfSignals flatten];
 
 ### Mapping and flattening
 
-[Flattening](#flattening) isn't that interesting on its own, but understanding
-how it works is important for [-flattenMap:][RACStream].
+[Flattening](#flattening) 本身并没有那么有趣，但是明白他如何工作对于[-flattenMap:][RACStream]很重要。
 
-`-flattenMap:` is used to transform each of a stream's values into _a new
-stream_. Then, all of the streams returned will be flattened down into a single
-stream. In other words, it's [-map:](#mapping) followed by [-flatten](#flattening).
+`-flattenMap:` 用于把每一个stream的值Map成一个新的stream。然后，所有返回的streams将被flattened到单个的stream。也就是说，它是 [-map:](#mapping)然后 [-flatten](#flattening)。
 
-This can be used to extend or edit sequences:
+这个操作符可以用于扩展或编辑sequences:
 
 ```objc
 RACSequence *numbers = [@"1 2 3 4 5 6 7 8 9" componentsSeparatedByString:@" "].rac_sequence;
