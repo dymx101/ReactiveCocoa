@@ -84,17 +84,11 @@ Disposables通常用来取消订阅一个[signal](#signals)。当一个[subscrip
 
 ## Schedulers
 
-A **scheduler**, represented by the [RACScheduler][] class, is a serial
-execution queue for [signals](#signals) to perform work or deliver their results upon.
+**Scheduler**由[RACScheduler][]代表，是一系列[signals](#signals)用于进行工作和发送结果的执行队列。
 
-Schedulers are similar to Grand Central Dispatch queues, but schedulers support
-cancellation (via [disposables](#disposables)), and always execute serially.
-With the exception of the [+immediateScheduler][RACScheduler], schedulers do not
-offer synchronous execution. This helps avoid deadlocks, and encourages the use
-of [signal operators][RACSignal+Operations] instead of blocking work.
+Schedulers类似于GCD队列，不同的是，schedulers支持取消(通过 [disposables](#disposables))，并且总是顺序的执行。除了+immediateScheduler，schedulers不提供同步执行。这就有助于避免死锁，并鼓励使用 [signal operators][RACSignal+Operations]，代替blocking。
 
-[RACScheduler][] is also somewhat similar to `NSOperationQueue`, but schedulers
-do not allow tasks to be reordered or depend on one another.
+[RACScheduler][] 也在某种程度上类似于`NSOperationQueue`，但是schedulers不允许任务被重新排序或者互相依赖。
 
 ## Value types
 
