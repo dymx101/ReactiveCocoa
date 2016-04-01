@@ -98,7 +98,7 @@ RAC 提供了一些不同的类，来方便的表示[stream](#streams)中得值:
 
 * **[RACUnit][]**  是一个“空”值，它用于在stream中有意义的数据不存在时，表示stream中得一个值。
 
-* **[RACEvent][]** 表示任何 [signal event](#signals)作为一个单值。它主要用于 [RACSignal][RACSignal+Operations]的 `-materialize` 方法。
+* **[RACEvent][]** 表示任何类型为 [signal event](#signals)的值。它主要用于 [RACSignal][RACSignal+Operations]的 `-materialize` 方法。
 
 ## Asynchronous Backtraces
 
