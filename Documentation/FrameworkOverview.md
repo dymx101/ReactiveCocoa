@@ -102,15 +102,11 @@ RAC 提供了一些不同的类，来方便的表示[stream](#streams)中得值:
 
 ## Asynchronous Backtraces
 
-Because RAC-based code often involves asynchronous work and queue-hopping, the
-framework supports [capturing asynchronous backtraces][RACBacktrace] to make debugging
-easier.
+因为基于RAC的代码经常包含异步工作和队列间跳转，这个框架支持 [捕捉异步回溯(Capturing Asynchronous Backtraces)][RACBacktrace]来让调试更容易。
 
-On OS X, backtraces can be automatically captured from any code, including
-system libraries.
+在OS X上，回溯可以自动从任何代码捕获，包括系统库。
 
-On iOS, only queue hops from within RAC and your project will be captured (but
-the information is still valuable).
+在iOS上，仅支持在RAC内部队列跳转以及在你工程中的捕获(但是这些信息仍然有价值)。
 
 [Design Guidelines]: DesignGuidelines.md
 [Haskell]: http://www.haskell.org
