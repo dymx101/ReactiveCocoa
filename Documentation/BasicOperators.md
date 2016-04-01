@@ -1,33 +1,32 @@
-# Basic Operators
+# 基本操作符 (Basic Operators)
 
-This document explains some of the most common operators used in ReactiveCocoa,
-and includes examples demonstrating their use.
+这个文档解释了ReactiveCocoa中的一些最常用的操作符，也包括了用法的例子。
 
-Operators that apply to [sequences][Sequences] _and_ [signals][Signals] are
-known as [stream][Streams] operators.
+作用于[sequences][Sequences]和[signals][Signals]的操作符被称为[stream][Streams]操作符。
 
-**[Performing side effects with signals](#performing-side-effects-with-signals)**
+**[对signal执行side effects](#performing-side-effects-with-signals)**
 
- 1. [Subscription](#subscription)
+1. [Subscription](#subscription)
  1. [Injecting effects](#injecting-effects)
 
-**[Transforming streams](#transforming-streams)**
+**[改变streams](#transforming-streams)**
 
- 1. [Mapping](#mapping)
- 1. [Filtering](#filtering)
+1. [Mapping](#mapping)
+1. [Filtering](#filtering)
 
-**[Combining streams](#combining-streams)**
+**[联合streams](#combining-signals)**
 
- 1. [Concatenating](#concatenating)
- 1. [Flattening](#flattening)
- 1. [Mapping and flattening](#mapping-and-flattening)
+1. [Concatenating](#concatenating)
+1. [Flattening](#flattening)
+1. [Mapping and flattening](#mapping-and-flattening)
 
-**[Combining signals](#combining-signals)**
+**[联合signals](#combining-signals)**
 
- 1. [Sequencing](#sequencing)
- 1. [Merging](#merging)
- 1. [Combining latest values](#combining-latest-values)
- 1. [Switching](#switching)
+1. [Sequencing](#sequencing)
+1. [Merging](#merging)
+1. [Combining latest values](#combining-latest-values)
+1. [Switching](#switching)
+
 
 ## Performing side effects with signals
 
