@@ -215,7 +215,7 @@ RACSequence *edited = [numbers flattenMap:^(NSString *num) {
 }];
 ```
 
-Or create multiple signals of work which are automatically recombined:
+或者创建多个自动重新组合(recombined)的signal任务:
 
 ```objc
 RACSignal *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence.signal;
