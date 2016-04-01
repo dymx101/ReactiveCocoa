@@ -92,17 +92,13 @@ Schedulers类似于GCD队列，不同的是，schedulers支持取消(通过 [dis
 
 ## Value types
 
-RAC offers a few miscellaneous classes for conveniently representing values in
-a [stream](#streams):
+RAC 提供了一些不同的类，来方便的表示[stream](#streams)中得值:
 
- * **[RACTuple][]** is a small, constant-sized collection that can contain
-   `nil` (represented by `RACTupleNil`). It is generally used to represent
-   the combined values of multiple streams.
- * **[RACUnit][]** is a singleton "empty" value. It is used as a value in
-   a stream for those times when more meaningful data doesn't exist.
- * **[RACEvent][]** represents any [signal event](#signals) as a single value.
-   It is primarily used by the `-materialize` method of
-   [RACSignal][RACSignal+Operations].
+* **[RACTuple][]**  是一个小型的，固定size的集合，它可以包含`nil` (用`RACTupleNil`表示)。一般用于表示多个stream的组合值
+
+* **[RACUnit][]**  是一个“空”值，它用于在stream中有意义的数据不存在时，表示stream中得一个值。
+
+* **[RACEvent][]** 表示任何 [signal event](#signals)作为一个单值。它主要用于 [RACSignal][RACSignal+Operations]的 `-materialize` 方法。
 
 ## Asynchronous Backtraces
 
