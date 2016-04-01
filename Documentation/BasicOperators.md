@@ -30,20 +30,14 @@
 
 ## Performing side effects with signals
 
-Most signals start out "cold," which means that they will not do any work until
-[subscription](#subscription).
+大部分signal起初都是“cold”的，意思是要等到[subscription](#subscription)之后才会做事。
 
-Upon subscription, a signal or its [subscribers][Subscription] can perform _side
-effects_, like logging to the console, making a network request, updating the
-user interface, etc.
+在subscription上，一个signal或者其[subscribers][Subscription]可以执行side effects，例如向控制台写日志，启动一个网络请求，更新用户界面。。。诸如此类的事情。
 
-Side effects can also be [injected](#injecting-effects) into a signal, where
-they won't be performed immediately, but will instead take effect with each
-subscription later.
+Side effects也可以被[注入(injected)](#injecting-effects)到一个signal中，在那里，他们不会被立刻执行，但是会在之后的每个subscription上产生效果。
 
 ### Subscription
-
-The [-subscribe…][RACSignal] methods give you access to the current and future values in a signal:
+[-subscribe…][RACSignal] 方法使你能够访问一个signal中当前和未来的值。
 
 ```objc
 RACSignal *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence.signal;
