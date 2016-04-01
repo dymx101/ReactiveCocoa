@@ -48,7 +48,8 @@ RACSignal *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac
 }];
 ```
 
-For a cold signal, side effects will be performed once _per subscription_:
+
+对于一个冷信号，side effects将在_每次subscription时_被执行:
 
 ```objc
 __block unsigned subscriptions = 0;
@@ -72,7 +73,7 @@ RACSignal *loggingSignal = [RACSignal createSignal:^ RACDisposable * (id<RACSubs
 }];
 ```
 
-This behavior can be changed using a [connection][Connections].
+这个行为可以改为使用一个[connection][Connections]。
 
 ### Injecting effects
 
