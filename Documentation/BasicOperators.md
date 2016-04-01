@@ -7,7 +7,7 @@
 **[对signal执行side effects](#performing-side-effects-with-signals)**
 
 1. [Subscription](#subscription)
- 1. [Injecting effects](#injecting-effects)
+1. [Injecting effects](#injecting-effects)
 
 **[改变streams](#transforming-streams)**
 
