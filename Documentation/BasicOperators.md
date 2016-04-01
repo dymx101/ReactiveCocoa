@@ -231,12 +231,12 @@ RACSignal *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac
 
 ## Combining signals
 
-These operators combine multiple signals into a single new [RACSignal][].
+这些操作符将多个singals组合成一个新的[RACSignal][]。
 
 ### Sequencing
 
-[-then:][RACSignal+Operations] starts the original signal,
-waits for it to complete, and then only forwards the values from a new signal:
+[-then:][RACSignal+Operations] 启动原始singall，等待它完成，再将新singal的数值传递：
+
 
 ```objc
 RACSignal *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence.signal;
@@ -252,9 +252,7 @@ RACSignal *sequenced = [[letters
         return [@"1 2 3 4 5 6 7 8 9" componentsSeparatedByString:@" "].rac_sequence.signal;
     }];
 ```
-
-This is most useful for executing all the side effects of one signal, then
-starting another, and only returning the second signal's values.
+这个最好用在执行某个signal所有的side effects时，启动另一个signal，并仅仅返回第二个signal的值。
 
 ### Merging
 
