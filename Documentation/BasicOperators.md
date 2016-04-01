@@ -103,12 +103,11 @@ loggingSignal = [loggingSignal doCompleted:^{
 
 ## Transforming streams
 
-These operators transform a single stream into a new stream.
+这些操作符将单个的stream变成一个新的stream。
 
 ### Mapping
 
-The [-map:][RACStream] method is used to transform the values in a stream, and
-create a new stream with the results:
+[-map:][RACStream]方法用于改变一个stream中得值，并用其结果创建一个新的stream:
 
 ```objc
 RACSequence *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence;
@@ -121,8 +120,7 @@ RACSequence *mapped = [letters map:^(NSString *value) {
 
 ### Filtering
 
-The [-filter:][RACStream] method uses a block to test each value, including it
-into the resulting stream only if the test passes:
+[-filter:][RACStream]方法使用一个block来测试每一个值，只在测试通过时才将其加入结果stream中：
 
 ```objc
 RACSequence *numbers = [@"1 2 3 4 5 6 7 8 9" componentsSeparatedByString:@" "].rac_sequence;
