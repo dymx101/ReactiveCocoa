@@ -305,8 +305,7 @@ RACSignal *combined = [RACSignal
 
 ### Switching
 
-The [-switchToLatest][RACSignal+Operations] operator is applied to
-a signal-of-signals, and always forwards the values from the latest signal:
+[-switchToLatest][RACSignal+Operations] 操作符用于signals的signal，并且总是传递最后一个signal的值:
 
 ```objc
 RACSubject *letters = [RACSubject subject];
