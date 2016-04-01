@@ -76,15 +76,11 @@ RAC 增加了一个 `-rac_sequence`方法到多数的Cocoa集合类型当中，�
 
 ## Disposables
 
-The **[RACDisposable][]** class is used for cancellation and resource cleanup.
+**[RACDisposable][]** 类被用于取消和资源清理。
 
-Disposables are most commonly used to unsubscribe from a [signal](#signals).
-When a [subscription](#subscription) is disposed, the corresponding subscriber
-will not receive _any_ further events from the signal. Additionally, any work
-associated with the subscription (background processing, network requests, etc.)
-will be cancelled, since the results are no longer needed.
+Disposables通常用来取消订阅一个[signal](#signals)。当一个[subscription](#subscription)被disposed时，相应的subscriber将不再从signal收到任何事件。而且，任何同subscription相关的工作(后台处理，网络请求等)将被取消，因为不再需要他们返回结果。
 
-For more information about cancellation, see the RAC [Design Guidelines][].
+更多关于cancellation的信息，参见 RAC [Design Guidelines][]。
 
 ## Schedulers
 
