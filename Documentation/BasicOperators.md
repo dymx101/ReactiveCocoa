@@ -133,11 +133,11 @@ RACSequence *filtered = [numbers filter:^ BOOL (NSString *value) {
 
 ## Combining streams
 
-These operators combine multiple streams into a single new stream.
+这些操作符将多个stream组合成一个新的stream。
 
 ### Concatenating
 
-The [-concat:][RACStream] method appends one stream's values to another:
+[-concat:][RACStream]方法将一个stream的值附加到另一个stream的值后面：
 
 ```objc
 RACSequence *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence;
@@ -149,8 +149,7 @@ RACSequence *concatenated = [letters concat:numbers];
 
 ### Flattening
 
-The [-flatten][RACStream] operator is applied to a stream-of-streams, and
-combines their values into a single new stream.
+[-flatten][RACStream]操作符应用于由streams组成的stream，并将他们的值组合到一个新的stream中。
 
 Sequences are [concatenated](#concatenating):
 
