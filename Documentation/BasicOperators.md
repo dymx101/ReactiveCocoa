@@ -256,8 +256,7 @@ RACSignal *sequenced = [[letters
 
 ### Merging
 
-The [+merge:][RACSignal+Operations] method will forward the values from many
-signals into a single stream, as soon as those values arrive:
+[+merge:][RACSignal+Operations]方法将多个singals的值传递到单个的stream，在这些值到达时立刻发送：
 
 ```objc
 RACSubject *letters = [RACSubject subject];
@@ -278,9 +277,7 @@ RACSignal *merged = [RACSignal merge:@[ letters, numbers ]];
 
 ### Combining latest values
 
-The [+combineLatest:][RACSignal+Operations] and `+combineLatest:reduce:` methods
-will watch multiple signals for changes, and then send the latest values from
-_all_ of them when a change occurs:
+[+combineLatest:][RACSignal+Operations] 和 `+combineLatest:reduce:` 方法会观察多个信号的变化，然后当有变化发生时，从这些数值中选择最新的值发送：
 
 ```objc
 RACSubject *letters = [RACSubject subject];
@@ -304,9 +301,7 @@ RACSignal *combined = [RACSignal
 [numbers sendNext:@"3"];
 ```
 
-Note that the combined signal will only send its first value when all of the
-inputs have sent at least one. In the example above, `@"A"` was never
-forwarded because `numbers` had not sent a value yet.
+注意组合后的signal仅在所有的输入至少发送一次的情况下，才发送它的第一个值。在上面的例子中，`@"A"` 没有被传递，因为`numbers`还没有值可以传。
 
 ### Switching
 
